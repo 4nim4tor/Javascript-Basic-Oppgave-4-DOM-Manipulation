@@ -36,6 +36,7 @@ button {
   transition: background 0.3s;
 }
 
+button,
 .dot.on {
   background: #00ffaa;
 }
