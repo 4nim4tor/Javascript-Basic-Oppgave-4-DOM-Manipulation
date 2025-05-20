@@ -41,6 +41,7 @@ function drawLine(x1, y1, x2, y2) {
   for (let i = 0; i <= steps; i++) {
     const x = Math.round(x1 + (dx * i) / steps);
     const y = Math.round(y1 + (dy * i) / steps);
+    coords.push([x, y]);
   }
   return coords;
 }
@@ -63,15 +64,15 @@ const smileCoords = [
   ...drawCircle(32, 32, 20),
 
   // Eyes (large pupils)
-  ...drawFilledRect(22, 24, 4, 4), // Left eye
-  ...drawFilledRect(38, 24, 4, 4), // Right eye
+  ...drawFilledRect(24, 24, 4, 4), // Left eye
+  ...drawFilledRect(37, 24, 4, 4), // Right eye
 
   // Eyebrows
-  ...drawLine(20, 22, 26, 22), // Left eyebrow
-  ...drawLine(38, 22, 44, 22), // Right eyebrow
+  ...drawLine(22, 22, 28, 22), // Left eyebrow
+  ...drawLine(36, 22, 42, 22), // Right eyebrow
 
   // Mouth (smile arc)
-  ...drawArc(32, 38, 12, Math.PI * 0.1, Math.PI * 0.9),
+  ...drawArc(32, 32, 12, Math.PI * 0.1, Math.PI * 0.9),
 ];
 
 // Tree (Large triangle canopy with thicker trunk)
