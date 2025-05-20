@@ -57,17 +57,6 @@ function drawTriangle(baseX, baseY, height) {
   return coords;
 }
 
-function drawTriangleSmall(baseX, baseY, height) {
-  const coords = [];
-  for (let y = 0; y < height; y++) {
-    const startX = baseX - y;
-    const endX = baseX + y;
-    for (let x = startX; x <= endX; x++) {
-      coords.push([x, baseY + y]);
-    }
-  }
-  return coords;
-}
 // Smiley Face (Larger, rounded, with more detail)
 const smileCoords = [
   // Outline of a large circle
@@ -88,7 +77,7 @@ const smileCoords = [
 // Tree (Large triangle canopy with thicker trunk)
 const treeCoords = [
   // Triangle-like canopy
-  ...drawTriangleSmall(32, 10, 12),
+  ...drawTriangle(32, 10, 12),
   ...drawTriangle(32, 18, 14),
 
   // Trunk
