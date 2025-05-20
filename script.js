@@ -23,16 +23,6 @@ function drawArc(cx, cy, radius, startAngle, endAngle) {
   return coords;
 }
 
-function drawFilledRect(x, y, width, height) {
-  const coords = [];
-  for (let i = 0; i < width; i++) {
-    for (let j = 0; j < height; j++) {
-      coords.push([x + i, y + j]);
-    }
-  }
-  return coords;
-}
-
 function drawLine(x1, y1, x2, y2) {
   const coords = [];
   const dx = x2 - x1;
@@ -42,6 +32,16 @@ function drawLine(x1, y1, x2, y2) {
     const x = Math.round(x1 + (dx * i) / steps);
     const y = Math.round(y1 + (dy * i) / steps);
     coords.push([x, y]);
+  }
+  return coords;
+}
+
+function drawFilledRect(x, y, width, height) {
+  const coords = [];
+  for (let i = 0; i < width; i++) {
+    for (let j = 0; j < height; j++) {
+      coords.push([x + i, y + j]);
+    }
   }
   return coords;
 }
