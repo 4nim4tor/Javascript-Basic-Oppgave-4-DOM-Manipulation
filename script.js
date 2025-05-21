@@ -1,5 +1,5 @@
-const gridWidth = 64;
-const gridHeight = 64;
+const gridWidth = 128;
+const gridHeight = 128;
 
 // === Helper functions for shapes ===
 function drawCircle(cx, cy, radius) {
@@ -61,18 +61,22 @@ function drawTriangle(baseX, baseY, height) {
 // Smiley Face (Larger, rounded, with more detail)
 const smileCoords = [
   // Outline of a large circle
-  ...drawCircle(32, 32, 20),
+  ...drawCircle(63, 63, 40),
+  ...drawCircle(64, 64, 40),
 
   // Eyes (large pupils)
-  ...drawFilledRect(24, 24, 4, 4), // Left eye
-  ...drawFilledRect(37, 24, 4, 4), // Right eye
+  ...drawFilledRect(48, 48, 8, 8), // Left eye
+  ...drawFilledRect(74, 48, 8, 8), // Right eye
 
   // Eyebrows
-  ...drawLine(22, 22, 28, 22), // Left eyebrow
-  ...drawLine(36, 22, 42, 22), // Right eyebrow
+  ...drawLine(44, 44, 56, 44),
+  ...drawLine(43, 43, 57, 45), // Left eyebrow
+  ...drawLine(72, 44, 84, 44),
+  ...drawLine(71, 45, 85, 43), // Right eyebrow
 
   // Mouth (smile arc)
-  ...drawArc(32, 32, 12, Math.PI * 0.1, Math.PI * 0.9),
+  ...drawArc(64, 64, 24, Math.PI * 0.1, Math.PI * 0.9),
+  ...drawArc(64, 64, 25, Math.PI * 0.1, Math.PI * 0.9),
 ];
 
 // Tree (Large triangle canopy with thicker trunk)
@@ -144,6 +148,9 @@ inputAct.addEventListener("submit", (e) => {
   e.preventDefault();
   generateDotArt();
 });
+
+// Coordinate system
+dot.setAttribute("data-coords", `(${x}, ${y})`);
 
 // --- ChatGPT suggested solution for "Enter"-field activation ---
 
