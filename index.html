@@ -8,8 +8,14 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <h1>Dot-Art Generator</h1>
-    <input type="text" id="description" placeholder="Enter a description..." />
+    <h1>Dot Art Generator</h1>
+    <form id="textInput">
+      <input
+        type="text"
+        id="description"
+        placeholder="Enter a description..."
+      />
+    </form>
     <button onclick="generateDotArt()">Generate</button>
     <button onclick="clearDotArt()">Clear Grid</button>
     <div class="dot-art" id="dotArtGrid"></div>

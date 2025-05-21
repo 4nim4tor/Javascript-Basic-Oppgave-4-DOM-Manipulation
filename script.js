@@ -104,13 +104,13 @@ function generateDotArt() {
     const dot = document.createElement("div");
     dot.classList.add("dot");
 
-    //add "smile" function
+    // add "smile" function
     if (description.includes("smile")) {
       if (smileIndices.includes(i)) {
         dot.classList.add("on");
       }
 
-      //add "tree" function
+      // add "tree" function
     } else if (description.includes("tree")) {
       if (treeIndices.includes(i)) {
         dot.classList.add("on");
@@ -137,9 +137,32 @@ function clearDotArt() {
   dots.forEach((dot) => dot.classList.remove("on"));
 }
 
+// Activate input field content with "Enter"
+
+const inputAct = document.querySelector("#textInput");
+inputAct.addEventListener("submit", (e) => {
+  e.preventDefault();
+  generateDotArt();
+});
+
+// --- ChatGPT suggested solution for "Enter"-field activation ---
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   const input = document.getElementById("description");
+
+//   input.addEventListener("keydown", (event) => {
+//     if (event.key === "Enter") {
+//       event.preventDefault();
+//       generateDotArt();
+//     }
+//   });
+// });
+
+//---
+
 //
 
-// First simle random generation attempt:
+// First simple random generation attempt:
 
 // function toIndex(x, y) {
 //   return y * gridWidth + x;
